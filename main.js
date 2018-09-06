@@ -1,15 +1,16 @@
 
 let tameThis = document.querySelector(".thisIsWhatsUp");
 
-axios.get("https://api.github.com/users/spoccomp?access_token=00e6fb16367f97403e63db0c70bbc813c7a3ccdf")
-//axios.get("https://api.github.com/users/spoccomp")
+//axios.get("https://api.github.com/users/spoccomp?access_token=00e6fb16367f97403e63db0c70bbc813c7a3ccdf")
+axios.get("https://api.github.com/users/spoccomp")
 .then(function (res) {
         let bing = res.data;
         console.log(bing);
         // let images = document.getElementsByTagName("img");
         // images.classList.add(".mySize");
-        
-tameThis.innerHTML =`
+  let theRow = document.createElement("div");
+  theRow.setAttribute("class", "row margin");      
+  theRow.innerHTML =`
  <div class="card">
     <div class="card-image waves-effect waves-block waves-light ">
       <img class="activator mySize" src="${bing.avatar_url}">
@@ -45,6 +46,7 @@ function functionThat(){
     // box.style.color = "green";
     // //box.innerHTML =  open("https://github.com/spoccomp?tab=repositories")
     // document.body.appendChild(box);
+    //window.open("https://github.com/spoccomp?tab=repositories");
     window.open("https://github.com/spoccomp?tab=repositories");
     //alert("https://github.com/spoccomp?tab=repositories");
 }   
